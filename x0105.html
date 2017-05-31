@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+      <script>
+
+var RECTANGLE = {
+  area: function() {
+    return this.width * this.height;
+  },
+  circumference: function() {
+    return 2 * (this.width + this.height);
+  },
+};
+
+function Rectangle(width, height) {
+  this.width = width;                                // 2
+  this.height = height;                              // 3
+  this.area = RECTANGLE.area.call(this);                      // 6
+  this.circumference = RECTANGLE.circumference.call(this);    // 10
+}
+
+var rect1 = new Rectangle(2, 3);
+show(rect1.area);                    // 6
+show(rect1.circumference);           // 10
+
+      </script>
+    </pre>
+  </body>
+</html>

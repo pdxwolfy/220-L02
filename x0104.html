@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+      <script>
+var computer = {
+  price: 30000,
+  shipping: 2000,
+  total: function() {
+    var tax = 3000;
+    function specialDiscount() {
+      show(this.price);
+      if (this.price > 20000) {
+        return 1000;
+      } else {
+        return 0;
+      }
+    }
+    show(this.price);
+    show(this.shipping);
+    show(this.tax);
+    show(specialDiscount());
+    return this.price + this.shipping + tax - specialDiscount.call(this);
+  },
+};
+
+show(computer.total())
+
+      </script>
+    </pre>
+  </body>
+</html>

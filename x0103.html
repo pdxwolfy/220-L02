@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+      <script>
+var a = 1;
+
+function Foo() {
+  this.a = 2;
+  this.bar = function() {
+    show(this.a);
+  };
+  this.bar();
+}
+
+var foo = new Foo(); // 2
+
+foo.bar();           // 2
+Foo();               // 2
+
+var obj = {};
+Foo.call(obj);       // 2
+obj.bar();           // 2
+
+show(this.a);        // 2
+      </script>
+    </pre>
+  </body>
+</html>

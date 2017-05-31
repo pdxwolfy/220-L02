@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+      <script>
+var myObject = {
+  count: 1,
+  myChildObject: {
+    myMethod: function() {
+      return this.count;
+    }
+  },
+};
+
+show(myObject.myChildObject.myMethod.call(myObject));
+show(myObject.myChildObject.myMethod.apply(myObject));
+      </script>
+    </pre>
+  </body>
+</html>

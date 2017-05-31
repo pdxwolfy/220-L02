@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assert.js"></script>
+  </head>
+
+  <body>
+    <pre id="console">
+      <script>
+var a = 1;
+var obj = {
+  a: 2,
+  func: function() {
+    return this.a;
+  }
+}
+
+show(obj.func());          // 2
+show(obj.func.call());     // undefined
+show(obj.func.call(this)); // 1
+show(obj.func(obj));       // 2
+
+var obj2 = {a: 3};
+show(obj.func.call(obj2)); // 3
+      </script>
+    </pre>
+  </body>
+</html>
